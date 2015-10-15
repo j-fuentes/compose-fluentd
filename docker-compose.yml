@@ -3,15 +3,15 @@ apache:
   ports:
     - 80:80
   volumes:
-    - web:/usr/local/apache2/htdocs
+    - ./web:/usr/local/apache2/htdocs
   container_name: apache
   hostname: apache
   links:
     - fluentd
   log_driver: "fluentd"
-  log_opt:
-    - fluentd-address=192.168.2.4:24225
-    - fluentd-tag=docker.{{.ID}}
+  # log_opt:
+  #   - fluentd-address=192.168.2.4:24225
+  #   - fluentd-tag=docker.{{.ID}}
 fluentd:
   image: fluent/fluentd
   ports:
