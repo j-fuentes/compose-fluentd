@@ -1,0 +1,12 @@
+apache:
+  image: httpd
+  ports:
+    - 80:80
+  volumes:
+    - /fluentd/web:/usr/local/apache2/htdocs
+  container_name: apache
+  hostname: apache
+  log_driver: "fluentd"
+  log_opt:
+    fluentd-address: "172.17.42.1:24224"
+    fluentd-tag: "docker.apache.{{.ID}}"

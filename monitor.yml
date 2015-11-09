@@ -1,0 +1,24 @@
+fluentd:
+  build: ./fluentd
+  volumes:
+    - /fluentd/fluentd/volumes/etc:/fluentd/etc
+  environment:
+    - FLUENTD_CONF=cloudopting.conf
+#    - FLUENTD_OPT=<command line options>
+  container_name: fluentd
+  net: "host"
+  ## exposes 24224
+
+elasticsearch:
+  image: elasticsearch:2
+  net: "host"
+  ## exposes 9200 9300
+  container_name: elasticsearch
+
+kibana:
+  image: kibana:4
+  net: "host"
+  ## exposes 5601
+  environment:
+    - ELASTICSEARCH_URL=http://localhost:9200
+  container_name: kibana
