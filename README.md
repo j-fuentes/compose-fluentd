@@ -32,6 +32,8 @@ The first thing to do is configure the indexs to be readed. Go to _Settings_->_I
 
 After this, it is possible to create visualizations.
 
+NOTE: it is necessary to access `http://<dockerhostip>` to generate event and populate elasticsearch.
+
 ## Configuration
 
 The fluentd configuration file is placed in `fluentd/volumes/etc/cloudopting.conf`.
