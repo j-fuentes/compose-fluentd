@@ -25,9 +25,3 @@ kibana:
   environment:
     - ELASTICSEARCH_URL=http://localhost:9200
   container_name: kibana
-
-mongo:
-  image: mongo
-  restart: always
-  net: "host"
-  container_name: mongo
