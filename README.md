@@ -30,6 +30,8 @@ Kibana should be listening on `http://<dockerhostip>:5601`.
 
 The first thing to do is configure the indexs to be readed. Go to _Settings_->_Indices_ and write the pattern `fluentd-*`. Press _Create_.
 
+After this, it is possible to create visualizations.
+
 ## Configuration
 
 The fluentd configuration file is placed in `fluentd/volumes/etc/cloudopting.conf`.
