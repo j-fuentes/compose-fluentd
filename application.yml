@@ -8,5 +8,5 @@ apache:
   hostname: apache
   log_driver: "fluentd"
   log_opt:
-    fluentd-address: "172.17.42.1:24224"
+    fluentd-address: "127.0.0.1:24224"
     fluentd-tag: "docker.apache.{{.ID}}"

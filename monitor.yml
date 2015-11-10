@@ -1,5 +1,6 @@
 fluentd:
   build: ./fluentd
+  restart: always
   volumes:
     - /fluentd/fluentd/volumes/etc:/fluentd/etc
   environment:
@@ -11,14 +12,22 @@ fluentd:
 
 elasticsearch:
   image: elasticsearch:2
+  restart: always
   net: "host"
   ## exposes 9200 9300
   container_name: elasticsearch
 
 kibana:
   image: kibana:4
+  restart: always
   net: "host"
   ## exposes 5601
   environment:
     - ELASTICSEARCH_URL=http://localhost:9200
   container_name: kibana
+
+mongo:
+  image: mongo
+  restart: always
+  net: "host"
+  container_name: mongo
