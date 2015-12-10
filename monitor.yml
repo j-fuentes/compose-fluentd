@@ -2,7 +2,7 @@ fluentd:
   build: ./fluentd
   restart: always
   volumes:
-    - /fluentd/fluentd/volumes/etc:/fluentd/etc
+    - ./fluentd/volumes/etc:/fluentd/etc
   environment:
     - FLUENTD_CONF=cloudopting.conf
 #    - FLUENTD_OPT=<command line options>
