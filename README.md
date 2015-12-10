@@ -77,6 +77,9 @@ Since we are using the [docker log driver](http://docs.docker.com/engine/referen
 
 Currently, all data parsed with [filter_record_transformer](http://docs.fluentd.org/articles/filter_record_transformer) is mapped as string. This could be an inconvenience for performance in data analysis in kibana.
 
+### Storing in elasticsearch only the data we want
+
+We are saving all the information that docker log driver give us. Probably, we'll not need information like the complete log line. It is convenient to discart the information we don't need in Fluentd in order to save storage, processing and headaches.
 
 ## References:
 
