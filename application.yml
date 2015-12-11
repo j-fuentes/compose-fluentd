@@ -3,7 +3,7 @@ apache:
   ports:
     - 80:80
   volumes:
-    - /fluentd/web:/usr/local/apache2/htdocs
+    - ./web:/usr/local/apache2/htdocs
   container_name: apache
   hostname: apache
   log_driver: "fluentd"
